@@ -31,3 +31,17 @@ void delay_us(unsigned int delay)
 		delay_1us();
 	}
 }
+unsigned int SW1()
+{
+	return  !(GPIO_PORTF_DATA_R & 0x10);
+}
+
+unsigned int SW2()
+{
+	return !(GPIO_PORTF_DATA_R & 0x01);
+}
+
+_Bool checkingDoor()
+{
+	return (GPIO_PORTE_DATA_R & 0x10);
+}
