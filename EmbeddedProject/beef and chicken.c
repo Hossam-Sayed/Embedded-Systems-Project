@@ -3,7 +3,7 @@ void Chicken()
 				int weight,time;
 				char c[1];
 				//print_on_LCD("Chicken weight?");
-				weight=//weight_input('c');
+				weight=weight_input('c');
         sprintf(c,"%d", weight);
 				//print_on_LCD(c);
         time=weight*12;
@@ -28,7 +28,7 @@ void Beef()
         int weight , time;
 				char c[1];
 				//print_on_LCD("Beef weight?");
-				weight =// weight_input('b');
+				weight =weight_input('b');
         sprintf(c,"%d", weight);
 				//print_on_LCD(c);
         time=weight*30;
