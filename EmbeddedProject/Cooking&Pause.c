@@ -1,34 +1,34 @@
 
-int pause() {
+_Bool pause() {
 	while(1){
 		int i;
 		for(i = 0; i < 100; i++){
-			/*
-			if(sw2 is pressed && door is closed){
-					return 1;
+			if(SW2() && checkingDoor()){
+				// turn ON LEDs
+				return true;
 			}
-			if (sw1 is pressed){
-				return 0;
-			}*/
+			if (SW1()){
+				// turn OFF LEDs
+				return false;
+			}
 			// wait 10ms
 		}
 		// Toggle the LEDs
 	}
 }
 
-int cooking(int delay){
+_Bool cooking(int delay){
 	int i;
-	// turn on LEDs
+	// turn ON LEDs
 	for(i = 0; i < delay * 100; i++){
-		/*
-		if (sw1 is pressed || door is open){
-			while(sw1 is pressed);
+		if (SW1() || !checkingDoor()){
+			while(SW1());
 			if (!pause()){
 				//clear LCD
-				return 0;
+				return false;
 			}
-		}*/
+		}
 		// wait 10ms
 	}
-	return 1;
+	return true;
 }
