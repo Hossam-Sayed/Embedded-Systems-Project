@@ -1,0 +1,25 @@
+
+void LCD_Data_String(char c[])
+{
+	
+	int i ;
+	for ( i = 0 ; i < strlen(c) ; i++)
+		lcd_data(c[i]);
+}
+
+
+void printLCD(char s[]){ 
+	LCD_command(1);
+	LCD_Data_String(s);	
+}
+
+char keypad_input(void)
+{
+	char value;
+do
+{
+	value = keypad_getkey();
+}while(value == 0);
+while(keypad_getkey() != 0){}
+return value;
+}
